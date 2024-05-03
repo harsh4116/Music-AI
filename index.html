@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music AI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #343a40; /* Dark gray */
+            color: #fff; /* White text */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #212529; /* Darker gray */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #fff; /* White */
+            margin-bottom: 30px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .oval-container {
+            border-radius: 50%;
+            padding: 20px;
+            background-color: #fff; /* White */
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+            color: #495057; /* Dark gray */
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ced4da; /* Light gray */
+            width: 80%;
+            margin-bottom: 20px;
+            background-color: #fff; /* White */
+            color: #495057; /* Dark gray text */
+        }
+        button[type="submit"] {
+            padding: 12px 24px;
+            background-color: #007bff; /* Blue */
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 80%;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Dark blue */
+        }
+        hr {
+            border-color: #ced4da; /* Light gray */
+            margin: 20px 0;
+        }
+        h2 {
+            color: #fff; /* White */
+            margin-top: 20px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: #212529; /* Darker gray */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            margin-top: 20px;
+            color: #fff; /* White text */
+        }
+        a {
+            color: #fff; /* White */
+        }
+        a:hover {
+            color: #ccc; /* Light gray on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music AI </h1>
+        <form action="/" method="POST">
+            <div class="oval-container">
+                <label for="seed_phrase">Enter a Phrase:</label>
+                <input type="text" id="seed_phrase" name="seed_phrase" required>
+                <button type="submit">|||||||</button>
+            </div>
+        </form>
+        <hr>
+        {% if generated_music %}
+        <h2>Generating...</h2>
+        <pre>{{ generated_music }}</pre>
+        <a href="/download" class="btn btn-primary">Download from here</a>
+        {% endif %}
+    </div>
+</body>
+</html>
